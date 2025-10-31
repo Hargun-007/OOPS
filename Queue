@@ -1,0 +1,60 @@
+import java.util.*;
+public class Main {
+public static final int max = 4;
+public static int[] arr = new int[max];
+public int r = -1;
+public int f = -1;
+public void en(int d) {
+if (r == max - 1) {
+System.out.println("overflow");
+return;
+}
+if (f == -1) {
+f = 0;
+}
+r++;
+arr[r] = d;
+System.out.println("added " + d);
+}
+public void de() {
+if ((f == -1 && r == -1) || f > r) {
+System.out.println("underflow");
+return;
+}
+System.out.println("removed " + arr[f]);
+f++;
+if (f > r) {
+System.out.println("no");
+}
+}
+public static void main(String[] args) {
+Main q = new Main();
+q.en(1);
+q.en(2);
+q.en(3);
+q.en(4);
+q.en(5);
+for (int i=0; i<max; i++){
+System.out.println(arr[i]);
+}
+q.de();
+q.de();
+q.de();
+q.de();
+q.de();
+q.de();
+q.de();
+q.de();
+q.de();
+for (int i=0; i<max; i++){
+System.out.println(arr[i]);
+}
+q.en(50);
+q.en(30);
+q.en(30);
+q.de();
+for (int i=0; i<max; i++){
+System.out.println(arr[i]);
+}
+}
+}
