@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+public class StudentListExample {
+public static void main(String[] args) {
+// Create an ArrayList of student names
+ArrayList<String> students = new ArrayList<>();
+// Add student names to the ArrayList
+students.add("rahul");
+students.add("radha");
+students.add("yoyo");
+students.add("dev");
+// Print the student list
+System.out.println("Student List: " + students);
+// Scanner for user input
+Scanner scanner = new Scanner(System.in);
+// Ask the user to search for a student
+System.out.print("Enter a student name to search: ");
+String searchStudent = scanner.nextLine();
+// Search for the student in the list
+if (students.contains(searchStudent)) {
+System.out.println(searchStudent + " is in the list.");
+} else {
+System.out.println(searchStudent + " is not in the list.");
+}
+students.remove("yoyo");
+System.out.println("After removing " + students);
+// Cleanup
+scanner.close();
+}
